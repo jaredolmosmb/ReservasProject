@@ -103,7 +103,7 @@ def IndexView(request):
 
 def ListaReservacionesView(request):
     todos_r=Reservacion.objects.all()
-    return render(request, 'radar/listaReservaciones.html', {'todos_r': todos_r})
+    return render(request, 'ReservasApp/listaReservaciones.html', {'todos_r': todos_r})
 
 def ReservacionView(request):
     if request.method == 'POST':
