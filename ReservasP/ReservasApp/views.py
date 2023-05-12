@@ -146,7 +146,7 @@ def Generar_QRView(request):
         """
         
         # Create Code column
-        df_reservaciones['CODE'] = df_reservaciones['fecha_reservacion'].astype(str) + "-" \
+        """df_reservaciones['CODE'] = df_reservaciones['fecha_reservacion'].astype(str) + "-" \
             + df_reservaciones['nombre_rp'] + "-" + df_reservaciones['nombre_cliente'] + "-" \
             + df_reservaciones['numero_personas'].astype(str)
 
@@ -159,7 +159,7 @@ def Generar_QRView(request):
            'nombre_x', 'nombre_cliente_x', 'fecha_reservacion_x', 'nombre_rp_x',
            'numero_personas_x', 'comentarios_x']]    
 
-        reservaciones_pendientes = len(df_qrcode)
+        reservaciones_pendientes = len(df_qrcode)"""
     else:
         df_reservaciones = pd.DataFrame([])
     

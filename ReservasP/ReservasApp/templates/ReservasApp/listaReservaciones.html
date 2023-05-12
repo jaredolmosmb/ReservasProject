@@ -64,7 +64,7 @@
                 <td class= "adjutsted">{{ m.nombre_rp }}</td>
                 <td class= "adjutsted">{{ m.numero_personas }}</td>
                 <td class= "adjutsted">{{ m.comentarios }}</td> 
-                <td class= "adjutsted"><img src="{{ m.qr_code.url }}" alt="Código QR de la reservación"></td> 
+                <td class= "adjutsted"><img src='{{ m.qr_code.url|slice:"12:" }}' alt="Código QR de la reservación"></td> 
                 
             
                 

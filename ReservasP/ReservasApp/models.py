@@ -26,7 +26,7 @@ class Reservacion(models.Model):
     nombre_rp = models.CharField(max_length=255, blank=True)
     numero_personas = models.PositiveIntegerField()
     comentarios = models.TextField(blank=True)
-    qr_code = models.ImageField(upload_to='qr_codes/', blank=True)
+    qr_code = models.ImageField(upload_to='ReservasApp/static/img', blank=True)
 
     def __str__(self):
         return str(self.id)
