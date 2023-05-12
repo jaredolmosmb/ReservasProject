@@ -101,6 +101,10 @@ def CreateUsuarioView(request):
 def IndexView(request):
 	return render (request, 'ReservasApp/index.html')
 
+def ListaReservacionesView(request):
+    todos_r=Reservacion.objects.all()
+    return render(request, 'radar/listaReservaciones.html', {'todos_r': todos_r})
+
 def ReservacionView(request):
     if request.method == 'POST':
         form = ReservacionForm(request.POST)

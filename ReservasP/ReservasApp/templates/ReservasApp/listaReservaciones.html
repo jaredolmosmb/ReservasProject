@@ -1,0 +1,117 @@
+{% extends 'ReservasApp/index.html' %}
+{% load static %}
+{% block content %}
+
+<style>
+      .table{
+        background: #27CF7E; color: #fff; border: #DADADA 1px solid; font-size: 14px;
+      }
+      tbody{
+        font-size: 12px; background: #DADADA; color: #000; border: #DADADA 1px;
+      }
+
+
+</style>
+<!--breadcumb-->
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="{% url 'radar:index' %}">Inicio</a></li>
+        <li class="breadcrumb-item active" aria-current="page"><a href="#">Reservaciones</a></li>
+</nav>
+<h1 class="text-center">Lista de Reservaciones</h1>
+<div class="row  text-right">
+    <div class="col botonera">
+        <a href="#">
+            <button class="btn btn-master" > <i class="fas fa-plus-circle" ></i> &nbsp;Agregar Reservacion</button>
+        </a>
+    </div>
+</div>
+
+
+<div class="row">
+    <div class="col">
+        <div class="card">
+            <div class="card-body">
+
+    <table id="example" class=" table table-striped datatable" style="width:100%">
+        <thead>
+            <tr>
+                <td>ID</td>
+                <td>HORA INICIO</td>    
+                <td>HORA FINALIZACION</td>
+                <td>CORREO ELECTRONICO</td>
+                <td>NOMBRE</td>
+                <td>NOMBRE CLIENTE</td>    
+                <td>FECHA RESERVACION</td>
+                <td>NOMBRE RP</td>
+                <td>NUM PERSONA</td>
+                <td>COMENTARIOS</td>      
+                
+            </tr>
+          
+        </thead>
+        <tbody>
+            {% for m in todos_r %}
+            <tr>
+                <td class= "adjutsted">{{ m.id }}</td>
+                <td class= "adjutsted">{{ m.hora_inicio }}</td>
+                <td class= "adjutsted">{{ m.hora_finalizacion }}</td>
+                <td class= "adjutsted">{{ m.correo_electronico }}</td>
+                <td class= "adjutsted">{{ m.nombre }}</td>
+                <td class= "adjutsted">{{ m.nombre_cliente }}</td>    
+                <td class= "adjutsted">{{ m.fecha_reservacion }}</td>
+                <td class= "adjutsted">{{ m.nombre_rp }}</td>
+                <td class= "adjutsted">{{ m.numero_personas }}</td>
+                <td class= "adjutsted">{{ m.comentarios }}</td> 
+            
+                
+                
+            </tr>
+            {% endfor %}
+        </tbody>
+        <tfoot>
+            
+        </tfoot>
+    </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="edicion" role="dialog">
+    
+</div>
+<div class="modal fade" id="creacion" role="dialog">
+    
+</div>
+
+
+<script type="text/javascript">
+    function abrir_modal_edicion(url){
+        $('#edicion').load(url, function (){
+            $(this).modal('show');
+        });
+    };
+    function abrir_modal_creacion(url){
+        $('#creacion').load(url, function (){
+            $(this).modal('show');
+        });
+    }
+
+
+ 
+
+ 
+$(document).ready(function() {
+    $('#example').DataTable({dom: '<"top"if>rtlp'});
+ 
+    /*$('input.global_filter').on( 'keyup click', function () {
+        filterGlobal();
+    } );*/
+    
+} );
+    
+
+</script>
+
+{% endblock %}

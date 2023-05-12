@@ -17,5 +17,8 @@ urlpatterns = [
 	path('agregarRegistro2/', views.AgregarRegistro2.as_view(), name='agregarRegistro2'),
 	path('cargar_usuario/', views.CreateUsuarioView, name='cargar_usuario'),
 
+	path('listaR', views.ListaReservacionesView, name='listaR')
+	#path('listaU', views.ListaUsuariosView, name='listaU'),
+
 	
 	]
