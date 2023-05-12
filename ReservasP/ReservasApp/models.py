@@ -8,6 +8,7 @@ import uuid, random
 from django.contrib.auth.models import Group
 import qrcode
 from io import BytesIO
+from django.core.files import File
 
 from django.utils.translation import gettext_lazy as _
 
@@ -25,6 +26,7 @@ class Reservacion(models.Model):
     nombre_rp = models.CharField(max_length=255, blank=True)
     numero_personas = models.PositiveIntegerField()
     comentarios = models.TextField(blank=True)
+    qr_code = models.ImageField(upload_to='qr_codes/', blank=True)
 
     def __str__(self):
         return str(self.id)
