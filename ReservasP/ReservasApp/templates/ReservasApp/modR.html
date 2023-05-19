@@ -1,0 +1,26 @@
+<div class="modal-dialog modal-lg" role="document">
+	<div class="modal-content">
+		<div class="modal-header">
+			<h2 class="modal-title">QR {{ reservacion }}</h2>
+			<button class="close" type="button" data-dismiss = "modal" aria-label="Close">
+				<span aria-hidden="true">&times;</span>
+			</button>
+		</div>
+		<form method="POST" action="#">
+			{% csrf_token %}
+			<div class="modal-body">
+			    
+			    <!-- Mostrar los detalles de la reservación aquí -->
+			    <p>ID: {{ reservacion.id }}</p>
+			    <p>Hora inicio: {{ reservacion.hora_inicio }}</p>
+			    <p>Hora finalización: {{ reservacion.hora_finalizacion }}</p>
+			    <img src='{{ reservacion.qr_code.url|slice:"12:" }}' alt="Código QR de la reservación">
+			    <!-- Otros campos de la reservación -->
+			</div>
+			<div class="modal-footer">
+				<button class="btn btn-danger" type="button" data-dismiss = "modal">Regresar</button>
+				
+			</div>
+		</form>
+	</div>
+</div>

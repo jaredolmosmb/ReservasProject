@@ -27,6 +27,17 @@ from django.views.generic import ListView, CreateView, UpdateView, DeleteView
 from django.urls import reverse_lazy
 from django.shortcuts import get_object_or_404
 
+# modal views
+class ActualizarReservaciones(UpdateView):
+    model = CustomUser
+    print('aqui')
+    form_class = CustomUserChangeForm
+    template_name = 'ReservasApp/modR.html'
+    success_url = reverse_lazy('ReservasApp:listaR')
+
+def DetalleView(request, reservacion_id):
+    reservacion = Reservacion.objects.get(id=reservacion_id)  # Asume que tu modelo se llama Reservacion
+    return render(request, 'ReservasApp/modR.html', {'reservacion': reservacion})
 
 #-Login views
 class InicioPlataforma(View):
