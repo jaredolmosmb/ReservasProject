@@ -121,13 +121,16 @@
   width: 180px;
   z-index: 21;
   top: 30px;
-  left: 70px;
+  left: 80px;
 }
 .modal-content {
   width: 360px; /* Anchura fija */
-  height: 650px; /* Altura fija */
+  height: 550px; /* Altura fija */
   margin: 0 auto; /* Centrar horizontalmente */
   /*overflow: auto; /* Agregar desplazamiento si el contenido excede la altura */
+}
+.modal-header {
+  display: none;
 }
 </style>
 
@@ -137,7 +140,7 @@
 	<div class="modal-dialog modal-lg" role="document">
 		<div class="modal-content">
 			<div class="modal-header">
-				<h2 class="modal-title">QR {{ reservacion }}</h2>
+				<h5 class="modal-title">QR {{ reservacion }}</h5>
 				<button class="close" type="button" data-dismiss = "modal" aria-label="Close">
 					<span aria-hidden="true">&times;</span>
 				</button>
