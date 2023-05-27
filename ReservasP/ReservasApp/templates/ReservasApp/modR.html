@@ -1,26 +1,176 @@
-<div class="modal-dialog modal-lg" role="document">
-	<div class="modal-content">
-		<div class="modal-header">
-			<h2 class="modal-title">QR {{ reservacion }}</h2>
-			<button class="close" type="button" data-dismiss = "modal" aria-label="Close">
-				<span aria-hidden="true">&times;</span>
-			</button>
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+<meta charset="UTF-8">
+<title>QR {{ reservacion }}</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+<style>
+/* Aquí se agrega el CSS */
+.modal-body {
+  width: auto; /* Anchura fija */
+  height: 570; /* Altura fija */
+  background-color: #e72b2c;
+}
+.Rectangle_1 {
+  border-width: 1.70px;
+  border-color: rgb(0, 0, 0);
+  border-style: solid;
+  border-radius: 23px;
+  position: relative; /* Cambio a posición relativa */
+  margin-bottom: 10px; /* Agregado margen inferior */
+  width: 325px;
+  height: 37px;
+  z-index: 19;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+}
+.Rectangle_2 {
+  border-width: 1.70px;
+  border-color: rgb(0, 0, 0);
+  border-style: solid;
+  border-radius: 23px;
+  position: relative; /* Cambio a posición relativa */
+  margin-bottom: 10px; /* Agregado margen inferior */
+  width: 325px;
+  height: 37px;
+  z-index: 19;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+}
+.Rectangle_3 {
+  border-width: 1.70px;
+  border-color: rgb(0, 0, 0);
+  border-style: solid;
+  border-radius: 23px;
+  position: relative; /* Cambio a posición relativa */
+  margin-bottom: 10px; /* Agregado margen inferior */
+  width: 325px;
+  height: 37px;
+  z-index: 19;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+}
+.Rectangle_4 {
+  border-width: 1.70px;
+  border-color: rgb(0, 0, 0);
+  border-style: solid;
+  border-radius: 23px;
+  position: relative; /* Cambio a posición relativa */
+  margin-bottom: 10px; /* Agregado margen inferior */
+  width: 325px;
+  height: 37px;
+  z-index: 19;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+}
+.px {
+  font-size: 15px;
+  font-family: "ARIAL";
+  color: rgb(247, 242, 242);
+  text-transform: uppercase;
+  line-height: 0.229;
+  left: 10;
+  top: 280;
+  z-index: 6;
+  padding: 20px;
+}
+#legend {
+  font-size: 10px;
+  font-family: "ARIAL";
+  color: rgb(247, 242, 242);
+  text-transform: uppercase;
+  line-height: 0.229;
+  z-index: 6;
+  position: relative;
+  top: 0 px;
+  left: 15px;
+}
+#logo {
+  position: relative;
+  height: 100px;
+  width: 82px;
+  z-index: 21;
+  top: 0px;
+  left: 118px;
+}
+#logo_text {
+  font-size: 10px;
+  font-family: "ARIAL";
+  color: rgb(247, 242, 242);
+  text-transform: uppercase;
+  line-height: 0.229;
+  z-index: 6;
+  position: relative;
+  top: 10px;
+  left: 130px;
+}
+#QR {
+  border-width: 3px;
+  border-color: rgb(0, 0, 0);
+  border-style: solid;
+  border-radius: 47px;
+  position: relative;
+  height: 180px;
+  width: 180px;
+  z-index: 21;
+  top: 30px;
+  left: 70px;
+}
+.modal-content {
+  width: 360px; /* Anchura fija */
+  height: 650px; /* Altura fija */
+  margin: 0 auto; /* Centrar horizontalmente */
+  /*overflow: auto; /* Agregar desplazamiento si el contenido excede la altura */
+}
+</style>
+
+</head>
+
+<body>
+	<div class="modal-dialog modal-lg" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h2 class="modal-title">QR {{ reservacion }}</h2>
+				<button class="close" type="button" data-dismiss = "modal" aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				</button>
+			</div>
+			<form method="POST" action="#">
+				{% csrf_token %}
+				<div class="modal-body">
+					<img id="logo" src="{% static 'img/ritter_logo.png' %}" alt="Código QR de la reservación">
+					<div id="logo_text">RITTER JRZ</div>
+					<div id="rectangle"><br></div>
+					<div class="Rectangle_1">
+                      <div class="px">{{ reservacion.nombre_cliente }}</div>
+                    </div>
+                    <div class="Rectangle_2">
+                      <div class="px">{{ reservacion.fecha_reservacion }}</div>
+                    </div>
+                    <div class="Rectangle_3">
+                      <div class="px">{{ reservacion.nombre_rp }}</div>
+                    </div>
+                    <div class="Rectangle_4">
+                      <div class="px">{{ reservacion.numero_personas }} PERSONAS</div>
+                    </div>
+				    <div id="legend">RESERVACIÓN VÁLIDA HASTA LAS 10 PM</div>
+				    <!-- Mostrar los detalles de la reservación aquí -->
+				    
+				    <img id="QR" src='{{ reservacion.qr_code.url|slice:"12:" }}' alt="Código QR de la reservación">
+				    <!-- Otros campos de la reservación -->
+				</div>
+				<div class="modal-footer">
+					
+					
+				</div>
+			</form>
 		</div>
-		<form method="POST" action="#">
-			{% csrf_token %}
-			<div class="modal-body">
-			    
-			    <!-- Mostrar los detalles de la reservación aquí -->
-			    <p>ID: {{ reservacion.id }}</p>
-			    <p>Hora inicio: {{ reservacion.hora_inicio }}</p>
-			    <p>Hora finalización: {{ reservacion.hora_finalizacion }}</p>
-			    <img src='{{ reservacion.qr_code.url|slice:"12:" }}' alt="Código QR de la reservación">
-			    <!-- Otros campos de la reservación -->
-			</div>
-			<div class="modal-footer">
-				<button class="btn btn-danger" type="button" data-dismiss = "modal">Regresar</button>
-				
-			</div>
-		</form>
 	</div>
-</div>
+</body>
