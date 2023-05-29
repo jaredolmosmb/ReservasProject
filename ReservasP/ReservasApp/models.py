@@ -34,7 +34,7 @@ class Reservacion(models.Model):
     def save(self, *args, **kwargs):
         # generar el código QR
         qr = qrcode.QRCode(version=1, box_size=10, border=4)
-        qr.add_data(str(self.id))
+        qr.add_data(str(self.fecha_reservacion)+"-"+str(self.nombre_rp)+"-"+str(self.nombre_cliente)+"-"+str(self.numero_personas))
         qr.make(fit=True)
         img = qr.make_image(fill_color='black', back_color='white')
 
