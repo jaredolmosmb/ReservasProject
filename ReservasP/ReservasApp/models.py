@@ -17,10 +17,10 @@ from .managers import CustomUserManager
 # Create your models here.
 
 class Reservacion(models.Model):
-    hora_inicio = models.DateTimeField()
-    hora_finalizacion = models.DateTimeField()
-    correo_electronico = models.EmailField(blank=True)
-    nombre = models.CharField(max_length=255, blank=True)
+    #hora_inicio = models.DateTimeField()
+    #hora_finalizacion = models.DateTimeField()
+    #correo_electronico = models.EmailField(blank=True)
+    #nombre = models.CharField(max_length=255, blank=True)
     nombre_cliente = models.CharField(max_length=255, blank=True)
     fecha_reservacion = models.DateField()
     nombre_rp = models.CharField(max_length=255, blank=True)

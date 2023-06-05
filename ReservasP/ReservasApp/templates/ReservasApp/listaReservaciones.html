@@ -37,10 +37,6 @@
         <thead>
             <tr>
                 <td>ID</td>
-                <td>HORA INICIO</td>    
-                <td>HORA FINALIZACION</td>
-                <td>CORREO ELECTRONICO</td>
-                <td>NOMBRE</td>
                 <td>NOMBRE CLIENTE</td>    
                 <td>FECHA RESERVACION</td>
                 <td>NOMBRE RP</td>
@@ -55,10 +51,6 @@
             {% for m in todos_r %}
             <tr>
                 <td class= "adjutsted">{{ m.id }}</td>
-                <td class= "adjutsted">{{ m.hora_inicio }}</td>
-                <td class= "adjutsted">{{ m.hora_finalizacion }}</td>
-                <td class= "adjutsted">{{ m.correo_electronico }}</td>
-                <td class= "adjutsted">{{ m.nombre }}</td>
                 <td class= "adjutsted">{{ m.nombre_cliente }}</td>    
                 <td class= "adjutsted">{{ m.fecha_reservacion }}</td>
                 <td class= "adjutsted">{{ m.nombre_rp }}</td>
@@ -69,7 +61,7 @@
                         <a href="#" id="{{ m.id }}">
                             <button class="btn" onclick="abrir_modal_edicion('{% url 'ReservasApp:detalle' m.id %}')"
                                     style="background: transparent; color: green; font-size: 20px;">
-                                <i class="fas fa-pencil-alt"></i>
+                                <i class="fas fa-search"></i>
                             </button>
                         </a>
                     </div>

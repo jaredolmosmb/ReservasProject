@@ -10,12 +10,12 @@ from django.utils.translation import gettext_lazy as _
 class ReservacionForm(forms.ModelForm):
     class Meta:
         model = Reservacion
-        fields = ['hora_inicio', 'hora_finalizacion', 'correo_electronico', 'nombre', 'nombre_cliente', 'fecha_reservacion', 'nombre_rp', 'numero_personas', 'comentarios']
+        fields = ['nombre_cliente', 'fecha_reservacion', 'nombre_rp', 'numero_personas', 'comentarios']
         widgets = {
-            'hora_inicio': forms.DateTimeInput(attrs={'class': 'form-control', 'type': 'datetime-local'}),
-            'hora_finalizacion': forms.DateTimeInput(attrs={'class': 'form-control', 'type': 'datetime-local'}),
-            'correo_electronico': forms.TextInput(attrs={'class': 'form-control'}),
-            'nombre': forms.TextInput(attrs={'class': 'form-control'}),
+            #'hora_inicio': forms.DateTimeInput(attrs={'class': 'form-control', 'type': 'datetime-local'}),
+            #'hora_finalizacion': forms.DateTimeInput(attrs={'class': 'form-control', 'type': 'datetime-local'}),
+            #'correo_electronico': forms.TextInput(attrs={'class': 'form-control'}),
+            #'nombre': forms.TextInput(attrs={'class': 'form-control'}),
             'nombre_cliente': forms.TextInput(attrs={'class': 'form-control'}),
             'fecha_reservacion': forms.DateInput(attrs={'class': 'form-control', 'type': 'date'}),
             'nombre_rp': forms.TextInput(attrs={'class': 'form-control'}),
