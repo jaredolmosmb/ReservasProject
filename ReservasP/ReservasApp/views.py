@@ -121,7 +121,7 @@ def ReservacionView(request):
         form = ReservacionForm(request.POST)
         if form.is_valid():
             form.save()
-            return redirect('ReservasApp:reservacion_success')
+            return redirect('ReservasApp:listaR')
         else:
             return render(request, 'ReservasApp/reservacion.html', {'form': form, 'errors': form.errors})
     else:
