@@ -93,16 +93,6 @@
 
     </script>
 
-    <script>
-      function limpiarFormulario() {
-        // Obtener referencia al formulario
-        var formulario = document.getElementById("miFormulario");
-        
-        // Restablecer los valores de los campos del formulario
-        formulario.reset();
-      }
-    </script>
-
 </head>
 
 <body>
@@ -239,7 +229,7 @@
                                               <tr>
                                                   <td></td>
                                                   <td class="text-right">
-                                                      <button type="submit" class="btn btn-master">Guardar</button>
+                                                      <button type="submit" class="btn btn-master" onclick="limpiarFormulario()">Guardar</button>
                                                   </td>
                                               </tr>
                                           </tbody>
