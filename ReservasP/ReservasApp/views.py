@@ -28,6 +28,12 @@ from django.urls import reverse_lazy
 from django.shortcuts import get_object_or_404
 
 # modal views
+class EliminarReservaciones(DeleteView):
+    model = Reservacion
+    template_name = 'ReservasApp/r_confirm_delete.html'
+
+    success_url = reverse_lazy('ReservasApp:listaR')
+
 class ActualizarReservaciones(UpdateView):
     model = CustomUser
     print('aqui')

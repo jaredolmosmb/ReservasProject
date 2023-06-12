@@ -22,5 +22,7 @@ urlpatterns = [
 	path('detalle/<int:reservacion_id>', views.DetalleView, name="detalle"),
 	#path('actualizarU/<int:pk>/', views.ActualizarUsuarios.as_view(), name='actualizarU'),
 
+	path('eliminarR/<int:pk>/', views.EliminarReservaciones.as_view(), name='eliminarR'),
+
 	
 	]
