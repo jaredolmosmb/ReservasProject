@@ -93,6 +93,16 @@
 
     </script>
 
+    <script>
+      function limpiarFormulario() {
+        // Obtener referencia al formulario
+        var formulario = document.getElementById("miFormulario");
+        
+        // Restablecer los valores de los campos del formulario
+        formulario.reset();
+      }
+    </script>
+
 </head>
 
 <body>
@@ -211,7 +221,7 @@
 
                           <div class="card-body card-form">
                              <h2>Reservación</h2>
-                              <form method='POST' enctype="" >
+                              <form method='POST' enctype="" target="_blank">
                                   {% csrf_token %}
                                   <div class="row">
                                       <table class="table">
