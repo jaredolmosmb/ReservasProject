@@ -92,22 +92,7 @@
 
 
     </script>
-    <script>
-      // Verificar si el formulario ha sido enviado
-      {% if form.is_bound %}
-        // Función para borrar el formulario al abandonar la página
-        function borrarFormulario() {
-          // Obtener referencia al formulario
-          var formulario = document.getElementById("miFormulario");
-          
-          // Borrar los valores de los campos del formulario
-          formulario.reset();
-        }
-        
-        // Asignar la función al evento unload del navegador
-        window.addEventListener("unload", borrarFormulario);
-      {% endif %}
-    </script>
+    
 
 </head>
 
@@ -227,7 +212,7 @@
 
                           <div class="card-body card-form">
                              <h2>Reservación</h2>
-                              <form method='POST' enctype="" id="miFormulario">
+                              <form method='POST' enctype="">
                                   {% csrf_token %}
                                   <div class="row">
                                       <table class="table">
