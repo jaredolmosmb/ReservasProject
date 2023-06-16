@@ -20,7 +20,8 @@ urlpatterns = [
 	path('listaR', views.ListaReservacionesView, name='listaR'),
 	path('actualizarR/<int:pk>/', views.ActualizarReservaciones.as_view(), name='actualizarR'),
 	path('detalle/<int:reservacion_id>', views.DetalleView, name="detalle"),
-	#path('actualizarU/<int:pk>/', views.ActualizarUsuarios.as_view(), name='actualizarU'),
+	
+	path('actualizarR2/<int:pk>/', views.ActualizarReservaciones2.as_view(), name='actualizarR2'),
 
 	path('eliminarR/<int:pk>/', views.EliminarReservaciones.as_view(), name='eliminarR'),
 

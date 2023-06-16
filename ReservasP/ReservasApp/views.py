@@ -34,6 +34,12 @@ class EliminarReservaciones(DeleteView):
 
     success_url = reverse_lazy('ReservasApp:listaR')
 
+class ActualizarReservaciones2(UpdateView):
+    model = Reservacion
+    form_class = ReservacionForm
+    template_name = 'ReservasApp/modR2.html'
+    success_url = reverse_lazy('ReservasApp:listaR')
+
 class ActualizarReservaciones(UpdateView):
     model = CustomUser
     print('aqui')

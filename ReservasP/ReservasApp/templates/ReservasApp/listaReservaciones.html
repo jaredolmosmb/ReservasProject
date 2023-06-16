@@ -67,6 +67,9 @@
                         <a href="#" id='{{m.id}}'>
                             <button class="btn" onclick = "abrir_modal_edicion('{% url 'ReservasApp:eliminarR' m.id %}')" style="background: transparent; color: red; font-size: 20px;"><i class="fas fa-trash"></i></button>
                         </a>
+                        <a href="#" id='{{m.id}}'>
+                            <button class="btn" onclick = "abrir_modal_edicion('{% url 'ReservasApp:actualizarR2' m.id %}')" style="background: transparent; color: green; font-size: 20px;"><i class="fas fa-pencil-alt"></i></button>
+                        </a>
                     </div>
                 </td>
                 
